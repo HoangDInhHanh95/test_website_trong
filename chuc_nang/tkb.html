@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thời Khóa Biểu A1-K58</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f7f9fc;
+            margin: 0;
+            padding: 20px;
+            color: #333333;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 30px;
+        }
+        h1 {
+            text-align: center;
+            color: #4a90e2;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+        table {
+            border-collapse: separate;
+            border-spacing: 0;
+            width: 100%;
+            margin-top: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        th, td {
+            border: 1px solid #e0e0e0;
+            padding: 15px;
+            text-align: center;
+            font-size: 0.9em;
+        }
+        th {
+            background-color: #4a90e2;
+            color: white;
+            font-weight: 500;
+        }
+        .header {
+            background-color: #e8f1fd;
+            font-weight: 500;
+        }
+        .edit-btn {
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 20px 0;
+            cursor: pointer;
+            border-radius: 50px;
+            transition: background-color 0.3s ease;
+        }
+        .edit-btn:hover {
+            background-color: #357abd;
+        }
+        .editable {
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .editable:hover {
+            background-color: #f5f8ff;
+        }
+        .afternoon {
+            background-color: #e8f1fd;
+        }
+        .notes {
+            margin-top: 30px;
+            border: 1px solid #e0e0e0;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: white;
+        }
+        .notes h2 {
+            margin-top: 0;
+            color: #4a90e2;
+            font-size: 1.5em;
+        }
+        #notesContent {
+            width: 100%;
+            min-height: 100px;
+            border: 1px solid #e0e0e0;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            th, td {
+                padding: 10px;
+                font-size: 0.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Thời Khóa Biểu Tuần Này</h1>
+        <button id="editBtn" class="edit-btn">Chỉnh sửa</button>
+        <table id="timetable">
+            <tr>
+                <th></th>
+                <th>Thứ 2</th>
+                <th>Thứ 3</th>
+                <th>Thứ 4</th>
+                <th>Thứ 5</th>
+                <th>Thứ 6</th>
+                <th>Thứ 7</th>
+            </tr>
+            <tr>
+                <td rowspan="5" class="header">Sáng</td>
+                <td class="editable">C.Cơ</td>
+                <td class="editable">Q.Phòng</td>
+                <td class="editable">Văn</td>
+                <td class="editable">Văn</td>
+                <td class="editable">Thể</td>
+                <td class="editable">Lý</td>
+            </tr>
+            <tr>
+                <td class="editable">Toán</td>
+                <td class="editable">Hoá</td>
+                <td class="editable">Sinh</td>
+                <td class="editable">Anh</td>
+                <td class="editable">Văn</td>
+                <td class="editable">Hoá</td>
+            </tr>
+            <tr>
+                <td class="editable">Thể</td>
+                <td class="editable">Lý</td>
+                <td class="editable">KTPL</td>
+                <td class="editable">Sử</td>
+                <td class="editable">Anh</td>
+                <td class="editable">Sinh</td>
+            </tr>
+            <tr>
+                <td class="editable">KTPL</td>
+                <td class="editable">Anh</td>
+                <td class="editable">Sử</td>
+                <td class="editable">Toán</td>
+                <td class="editable">Hoá</td>
+                <td class="editable">Toán</td>
+            </tr>
+            <tr>
+                <td class="editable"></td>
+                <td class="editable"></td>
+                <td class="editable"></td>
+                <td class="editable"></td>
+                <td class="editable">Lý</td>
+                <td class="editable">S.hoạt</td>
+            </tr>
+            <tr>
+                <td colspan="7" class="afternoon header">Chiều</td>
+            </tr>
+            <tr>
+                <td class="header">Ca 2</td>
+                <td class="editable">Lý</td>
+                <td class="editable">Toán</td>
+                <td class="editable">Hoá</td>
+                <td class="editable">Hoá</td>
+                <td class="editable">Lý</td>
+                <td class="editable">Toán</td>
+            </tr>
+            <tr>
+                <td class="header">Ca 3</td>
+                <td class="editable">Hoá</td>
+                <td class="editable">Toán</td>
+                <td class="editable">Hoá</td>
+                <td class="editable">Lý</td>
+                <td class="editable">Toán</td>
+                <td class="editable">Toán</td>
+            </tr>
+        </table>
+        
+        <div class="notes">
+            <h2>Ghi chú thêm:</h2>
+            <div id="notesContent" class="editable" contenteditable="false"></div>
+        </div>
+    </div>
+
+    <script>
+        let isEditing = false;
+
+        document.getElementById('editBtn').addEventListener('click', function() {
+            isEditing = !isEditing;
+            this.textContent = isEditing ? 'Lưu' : 'Chỉnh sửa';
+            
+            const editableCells = document.querySelectorAll('.editable');
+            editableCells.forEach(cell => {
+                cell.contentEditable = isEditing;
+                cell.style.backgroundColor = isEditing ? '#fffde7' : '';
+            });
+
+            document.getElementById('notesContent').contentEditable = isEditing;
+            document.getElementById('notesContent').style.backgroundColor = isEditing ? '#fffde7' : '';
+
+            if (!isEditing) {
+                // Lưu dữ liệu vào localStorage
+                const timetableData = [];
+                document.querySelectorAll('#timetable tr').forEach(row => {
+                    const rowData = [];
+                    row.querySelectorAll('td').forEach(cell => {
+                        rowData.push(cell.textContent);
+                    });
+                    timetableData.push(rowData);
+                });
+                localStorage.setItem('timetableData', JSON.stringify(timetableData));
+                
+                // Lưu ghi chú
+                const notesContent = document.getElementById('notesContent').innerHTML;
+                localStorage.setItem('notesContent', notesContent);
+                
+                alert('Đã lưu thay đổi!');
+            }
+        });
+
+        // Khôi phục dữ liệu từ localStorage khi tải trang
+        window.addEventListener('load', function() {
+            const savedData = localStorage.getItem('timetableData');
+            if (savedData) {
+                const timetableData = JSON.parse(savedData);
+                const rows = document.querySelectorAll('#timetable tr');
+                timetableData.forEach((rowData, rowIndex) => {
+                    const cells = rows[rowIndex].querySelectorAll('td');
+                    rowData.forEach((cellData, cellIndex) => {
+                        if (cells[cellIndex]) {
+                            cells[cellIndex].textContent = cellData;
+                        }
+                    });
+                });
+            }
+
+            // Khôi phục ghi chú
+            const savedNotes = localStorage.getItem('notesContent');
+            if (savedNotes) {
+                document.getElementById('notesContent').innerHTML = savedNotes;
+            }
+        });
+    </script>
+</body>
+</html>

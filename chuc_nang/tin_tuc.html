@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tin Tức</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f0f8ff;
+            color: #007ade;
+        }
+        h1 {
+            text-align: center;
+            color: #2301cf;
+        }
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        #add-news, #news-list {
+            margin-bottom: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        input, textarea {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #4169e1;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px;
+            background-color: #4169e1;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0079e2;
+        }
+        #news-items {
+            list-style-type: none;
+            padding: 0;
+        }
+        #news-items li {
+            background-color: white;
+            margin-bottom: 10px;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        .news-date {
+            font-size: 0.9em;
+            color: #4169e1;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .news-content {
+            margin-top: 10px;
+        }
+        .delete-btn, .edit-btn {
+            position: absolute;
+            right: 10px;
+            background-color: #ff4136;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            padding: 5px 10px;
+            cursor: pointer;
+            display: none;
+        }
+        .delete-btn {
+            top: 10px;
+        }
+        .edit-btn {
+            top: 45px;
+            background-color: #2ecc40;
+        }
+        #news-items li:hover .delete-btn,
+        #news-items li:hover .edit-btn {
+            display: block;
+        }
+        .delete-btn:hover {
+            background-color: #d50000;
+        }
+        .edit-btn:hover {
+            background-color: #01ff70;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tin Tức Gần Đây</h1>
+    
+    <div id="add-news">
+        <div class="section-header">
+            <h2>Thêm tin tức - sự kiện</h2>
+            <button type="submit" form="news-form">Thêm tin</button>
+        </div>
+        <form id="news-form">
+            <input type="text" id="news-title" placeholder="Tiêu đề" required>
+            <textarea id="news-content" placeholder="Nội dung" required></textarea>
+        </form>
+    </div>
+    
+    <div id="news-list">
+        <h2>Danh sách tin tức - sự kiện</h2>
+        <ul id="news-items">
+            <!-- Danh sách tin tức sẽ được thêm vào đây -->
+        </ul>
+    </div>
+
+    <script>
+        // Phần JavaScript giữ nguyên như cũ
+    </script>
+    <script src="tin_tuc.js"></script>
+</body>
+</html>

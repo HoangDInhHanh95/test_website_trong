@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoạt Động Ngoại Khóa A1-K58</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e6f2ff;
+            color: #003366;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        h1 {
+            color: #0066cc;
+            text-align: center;
+        }
+        .main-content {
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #99ccff;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #4d94ff;
+            color: white;
+        }
+        button {
+            background-color: #3399ff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            border-radius: 4px;
+        }
+        button:hover {
+            background-color: #0066cc;
+        }
+        #imageContainer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        #imageContainer img {
+            margin: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            max-width: 200px;
+            max-height: 200px;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        #imageContainer img:hover {
+            transform: scale(1.05);
+        }
+        .fullscreen {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            justify-content: center;
+            align-items: center;
+        }
+        .fullscreen img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hoạt Động Ngoại Khóa A1-K58</h1>
+        
+        <div class="main-content">
+            <p>Hãy cùng nhau xem những kỉ niệm nha</p>
+            
+            <table>
+                <tr>
+                    <th>Năm học</th>
+                    <th>Hành động</th>
+                </tr>
+                <tr>
+                    <td>Năm 2022-2023 - Lớp 10</td>
+                    <td><button onclick="loadImages('2022-2023')">Xem</button></td>
+                </tr>
+                <tr>
+                    <td>Năm 2023-2024 - Lớp 11</td>
+                    <td><button onclick="loadImages('2023-2024')">Xem</button></td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="imageContainer"></div>
+
+        <div id="fullscreenView" class="fullscreen">
+            <span class="close" onclick="closeFullscreen()">&times;</span>
+            <img id="fullscreenImage">
+        </div>
+    </div>
+
+    <script>
+        // Giả lập dữ liệu ảnh (thay thế bằng dữ liệu thực tế của bạn)
+        const imageData = {
+            '2022-2023': [
+                'hdnk/image1_2022.jpg',
+                'hdnk/image2_2022.jpg',
+                'hdnk/image3_2022.jpg'
+            ],
+            '2023-2024': [
+                'hdnk/image1_2023.jpg',
+                'hdnk/image2_2023.jpg',
+                'hdnk/image3_2023.jpg'
+            ]
+        };
+
+        function loadImages(year) {
+            const container = document.getElementById('imageContainer');
+            container.innerHTML = ''; // Xóa nội dung cũ
+
+            imageData[year].forEach(imageSrc => {
+                const img = document.createElement('img');
+                img.src = imageSrc;
+                img.alt = `Ảnh hoạt động năm ${year}`;
+                img.onclick = () => openFullscreen(imageSrc);
+                container.appendChild(img);
+            });
+        }
+
+        function openFullscreen(imageSrc) {
+            const fullscreenView = document.getElementById('fullscreenView');
+            const fullscreenImage = document.getElementById('fullscreenImage');
+            fullscreenImage.src = imageSrc;
+            fullscreenView.style.display = 'flex';
+        }
+
+        function closeFullscreen() {
+            document.getElementById('fullscreenView').style.display = 'none';
+        }
+
+        // Đóng fullscreen khi click bên ngoài ảnh
+        window.onclick = (event) => {
+            const fullscreenView = document.getElementById('fullscreenView');
+            if (event.target == fullscreenView) {
+                fullscreenView.style.display = 'none';
+            }
+        };
+    </script>
+</body>
+</html>
